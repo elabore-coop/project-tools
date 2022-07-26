@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_timesheet_funding_wish
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-25 17:02+0000\n"
+"PO-Revision-Date: 2022-07-25 17:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_timesheet_funding_wish
+#: model:ir.model,name:project_timesheet_funding_wish.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: project_timesheet_funding_wish
+#: model:ir.model.fields,field_description:project_timesheet_funding_wish.field_account_analytic_line__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: project_timesheet_funding_wish
+#: model:ir.model.fields.selection,name:project_timesheet_funding_wish.selection__account_analytic_line__funding_wish__free
+msgid "Free"
+msgstr "Offert"
+
+#. module: project_timesheet_funding_wish
+#: code:addons/project_timesheet_funding_wish/models/hr_timesheet.py:0
+#: model:ir.model.fields,field_description:project_timesheet_funding_wish.field_account_analytic_line__funding_wish
+#, python-format
+msgid "Funding wish"
+msgstr "Type de financement"
+
+#. module: project_timesheet_funding_wish
+#: model:ir.model.fields,field_description:project_timesheet_funding_wish.field_account_analytic_line__id
+msgid "ID"
+msgstr ""
+
+#. module: project_timesheet_funding_wish
+#: model:ir.model.fields,field_description:project_timesheet_funding_wish.field_account_analytic_line____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: project_timesheet_funding_wish
+#: model:ir.model.fields.selection,name:project_timesheet_funding_wish.selection__account_analytic_line__funding_wish__accepted
+msgid "Payment accepted"
+msgstr "Paiement accepté"
+
+#. module: project_timesheet_funding_wish
+#: model:ir.model.fields.selection,name:project_timesheet_funding_wish.selection__account_analytic_line__funding_wish__expected
+msgid "Payment expected"
+msgstr "Paiement attendu"
+
+#. module: project_timesheet_funding_wish
+#: code:addons/project_timesheet_funding_wish/models/hr_timesheet.py:0
+#: model:ir.model.fields,field_description:project_timesheet_funding_wish.field_account_analytic_line__treated
+#, python-format
+msgid "Treated"
+msgstr "Traité"
