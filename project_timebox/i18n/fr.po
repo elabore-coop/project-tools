@@ -1,0 +1,91 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_timebox
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-01 09:34+0000\n"
+"PO-Revision-Date: 2022-08-01 09:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_project_task__display_name
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_project_task__id
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__id
+msgid "ID"
+msgstr ""
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_project_task____last_update
+#: model:ir.model.fields,field_description:project_timebox.field_timebox____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: project_timebox
+#: model:ir.model,name:project_timebox.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: project_timebox
+#: model:ir.model,name:project_timebox.model_timebox
+msgid "Timebox"
+msgstr "Estimation"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_project_task__timebox_max_id
+msgid "Timebox Max"
+msgstr "Estimation haute"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_project_task__timebox_min_id
+msgid "Timebox Min"
+msgstr "Estimation basse"
+
+#. module: project_timebox
+#: model:ir.actions.act_window,name:project_timebox.act_timeboxes_list
+#: model:ir.ui.menu,name:project_timebox.menu_timeboxes
+#: model_terms:ir.ui.view,arch_db:project_timebox.timebox_view_tree
+msgid "Timeboxes"
+msgstr "Estimations"
+
+#. module: project_timebox
+#: model:ir.model.fields,field_description:project_timebox.field_timebox__name
+msgid "name"
+msgstr "nom"

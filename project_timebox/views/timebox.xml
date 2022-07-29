@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="timebox_view_tree" model="ir.ui.view">
+        <field name="name">timebox.view.tree</field>
+        <field name="model">timebox</field>
+        <field name="arch" type="xml">
+            <tree string="Timeboxes" editable="top" default_order="sequence">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="act_timeboxes_list" model="ir.actions.act_window">
+        <field name="name">Timeboxes</field>
+        <field name="res_model">timebox</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_timeboxes" action="act_timeboxes_list" parent="project.menu_project_config" sequence="99" name="Timeboxes" />
+
+</odoo>
