@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_task_form2_timebox" model="ir.ui.view">
+        <field name="name">project.task.form.timebox</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_deadline']" position="after">
+                <field name="timebox_min_id" widget="selection" />
+                <field name="timebox_max_id" widget="selection" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
