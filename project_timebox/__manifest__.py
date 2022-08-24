@@ -79,6 +79,7 @@ This module is maintained by Elabore.
         "security/ir.model.access.csv",
         "views/project_task.xml",
         "views/timebox.xml",
+        "views/portal_template.xml",
     ],
     # only loaded in demonstration mode
     "demo": [],
