@@ -16,6 +16,16 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: project_timebox
+#: model_terms:ir.ui.view,arch_db:project_timebox.portal_my_task_timebox
+msgid "<strong>Timebox Max:</strong>"
+msgstr "<strong>Temps estimé maxi :</strong>"
+
+#. module: project_timebox
+#: model_terms:ir.ui.view,arch_db:project_timebox.portal_my_task_timebox
+msgid "<strong>Timebox Min:</strong>"
+msgstr "<strong>Temps estimé mini :</strong>"
+
+#. module: project_timebox
 #: model:ir.model.fields,field_description:project_timebox.field_timebox__create_uid
 msgid "Created by"
 msgstr "Créé par"

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_task_timebox" name="My Task: Timebox" inherit_id="project.portal_my_task" priority="40">
+        <xpath expr="//t[@t-set='card_body']/div[hasclass('row','mb-4')]" position="after">
+            <div id="timebox" class="row mb-2">
+                <div class="col-12 col-md-6" t-if="task.timebox_min_id">
+                    <strong>Timebox Min:</strong>
+                    <span t-field="task.timebox_min_id" />
+                </div>
+                <div class="col-12 col-md-6" t-if="task.timebox_max_id">
+                    <strong>Timebox Max:</strong>
+                    <span t-field="task.timebox_max_id" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
