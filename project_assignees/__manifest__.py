@@ -79,6 +79,7 @@ This module is maintained by Elabore.
     # always loaded
     "data": [
         "views/project_task.xml",
+        "views/portal_template.xml",
     ],
     # only loaded in demonstration mode
     "demo": [],

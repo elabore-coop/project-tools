@@ -16,19 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: project_assignees
-#: model:ir.model.fields,field_description:project_assignees.field_project_task__assignee_ids
-msgid "Assignees"
-msgstr "Autres assignations"
-
-#. module: project_assignees
-#: model:ir.model.fields,field_description:project_assignees.field_project_task__display_name
-msgid "Display Name"
-msgstr "Nom affiché"
-
-#. module: project_assignees
-#: model:ir.model.fields,field_description:project_assignees.field_project_task__id
-msgid "ID"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:project_assignees.portal_my_task_timebox
+msgid "<strong>Other assignements</strong>"
+msgstr "<strong>Autres intervenants</strong>"
 
 #. module: project_assignees
 #: model:ir.model.fields,field_description:project_assignees.field_project_task__assignee_ids                        |                                                                                                                       
@@ -39,3 +29,4 @@ msgstr "Autres assignations"
 #: model:ir.model,name:project_assignees.model_project_task
 msgid "Task"
 msgstr "Tâche"
+
