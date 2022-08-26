@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="request_type_view_tree" model="ir.ui.view">
+        <field name="name">request.type.view.tree</field>
+        <field name="model">request.type</field>
+        <field name="arch" type="xml">
+            <tree string="Request Types" editable="top" default_order="sequence">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="act_request_types_list" model="ir.actions.act_window">
+        <field name="name">Request Types</field>
+        <field name="res_model">request.type</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_request_types" action="act_request_types_list" parent="project.menu_project_config" sequence="99" name="Request Types" />
+
+</odoo>

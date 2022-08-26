@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_task_service_user,project.task_service.user,model_task_service,,1,0,0,0
+access_task_service_manager,project.task_service.manager,model_task_service,project.group_project_manager,1,1,1,1
+access_request_type_user,project.request_type.user,model_request_type,,1,0,0,0
+access_request_type_manager,project.request_type.manager,model_request_type,project.group_project_manager,1,1,1,1

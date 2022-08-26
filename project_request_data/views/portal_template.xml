@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_task_request_data" name="My Task: Request Data" inherit_id="project.portal_my_task" priority="40">
+        <xpath expr="//t[@t-set='card_body']/div[hasclass('row','mb-4')]" position="after">
+            <div id="request_data" class="row mb-4">
+                <div class="col-12 col-md-6" t-if="task.service_id">
+                    <strong>Service:</strong>
+                    <span t-field="task.service_id" />
+                </div>
+                <div class="col-12 col-md-6" t-if="task.request_type_id">
+                    <strong>Request type:</strong>
+                    <span t-field="task.request_type_id" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
