@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="task_service_view_tree" model="ir.ui.view">
+        <field name="name">task.service.view.tree</field>
+        <field name="model">task.service</field>
+        <field name="arch" type="xml">
+            <tree string="Task Services" editable="top" default_order="sequence">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="act_task_services_list" model="ir.actions.act_window">
+        <field name="name">Task Services</field>
+        <field name="res_model">task.service</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_task_services" action="act_task_services_list" parent="project.menu_project_config" sequence="99" name="Task Services" />
+
+</odoo>

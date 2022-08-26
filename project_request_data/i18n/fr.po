@@ -1,0 +1,116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* project_request_data
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-26 12:51+0000\n"
+"PO-Revision-Date: 2022-08-26 12:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_request_data
+#: model_terms:ir.ui.view,arch_db:project_request_data.portal_my_task_request_data
+msgid "<strong>Request type:</strong>"
+msgstr "<strong>Type de demande :</strong>"
+
+#. module: project_request_data
+#: model_terms:ir.ui.view,arch_db:project_request_data.portal_my_task_request_data
+msgid "<strong>Service:</strong>"
+msgstr "<strong>Service :</strong>"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__create_uid
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__create_date
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__display_name
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__id
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__id
+msgid "ID"
+msgstr ""
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type____last_update
+#: model:ir.model.fields,field_description:project_request_data.field_task_service____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__write_uid
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__write_date
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: project_request_data
+#: model:ir.model,name:project_request_data.model_request_type
+#: model:ir.model.fields,field_description:project_request_data.field_project_task__request_type_id
+msgid "Request Type"
+msgstr "Type de demande"
+
+#. module: project_request_data
+#: model:ir.actions.act_window,name:project_request_data.act_request_types_list
+#: model:ir.ui.menu,name:project_request_data.menu_request_types
+#: model_terms:ir.ui.view,arch_db:project_request_data.request_type_view_tree
+msgid "Request Types"
+msgstr "Types de demande"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__sequence
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_project_task__service_id
+msgid "Service"
+msgstr "Service"
+
+#. module: project_request_data
+#: model:ir.model,name:project_request_data.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: project_request_data
+#: model:ir.actions.act_window,name:project_request_data.act_task_services_list
+#: model:ir.ui.menu,name:project_request_data.menu_task_services
+#: model_terms:ir.ui.view,arch_db:project_request_data.task_service_view_tree
+msgid "Task Services"
+msgstr "Services"
+
+#. module: project_request_data
+#: model:ir.model,name:project_request_data.model_task_service
+msgid "Task service"
+msgstr "Service"
+
+#. module: project_request_data
+#: model:ir.model.fields,field_description:project_request_data.field_request_type__name
+#: model:ir.model.fields,field_description:project_request_data.field_task_service__name
+msgid "name"
+msgstr "nom"
+
