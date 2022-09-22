@@ -1,5 +1,6 @@
 # Copyright 2020 Lokavaluto ()
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+import base64
 from odoo import http
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import CustomerPortal
@@ -50,8 +51,7 @@ class PortalTaskCreation(CustomerPortal):
         website=True,
     )
     def portal_task_creation(self, access_token=None, redirect=None, **kw):
-        partner = request.env.user.partner_id
-        values = self._task_get_page_view_values(partner, access_token, **kw)
+        values = self._task_get_page_view_values(request.env.user.partner_id, access_token, **kw)
         request_types = request.env["request.type"].sudo().search([])
         task_services = request.env["task.service"].sudo().search([])
         priorities = self._get_task_priorities()
@@ -84,12 +84,19 @@ class PortalTaskCreation(CustomerPortal):
         if values.get("bug_report", False):
             description = description + "<br/><br/><b>BUG REPORT:</b><br/>" + values["bug_report"]
         values["description"] = description
+        values["attachments"] = []
+        for field_name, field_value in request.params.items():
+            # If the value of the field if a file
+            if field_name == 'attachment' and field_value != "":
+                field_value.field_name = field_name
+                values["attachments"].append(field_value)
         return values
 
     @http.route(
         ["/task/create"],
         type="http",
         auth="public",
+        methods=['POST'],
         website=True,
     )
     def create_task(self, **kwargs):
@@ -101,5 +108,16 @@ class PortalTaskCreation(CustomerPortal):
         values["user_id"] = None
 
         # Create task
-        request.env["project.task"].create(values)
+        task_id = request.env["project.task"].create(values)
+
+        # Add attachments
+        for file in values.get("attachments", False):
+            attachment_value = {
+                    'name': file.filename,
+                    'datas': base64.encodestring(file.read()),
+                    'datas_fname': file.filename,
+                    'res_model': "project.task",
+                    'res_id': task_id,
+                }
+            request.env['ir.attachment'].sudo().create(attachment_value)
         return request.render("project_task_portal_form.portal_task_created", {})
