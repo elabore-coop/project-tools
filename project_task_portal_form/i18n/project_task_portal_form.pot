@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* project_task_portal_form
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-22 09:35+0000\n"
+"PO-Revision-Date: 2022-09-22 09:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_created
+msgid "<br/>\n"
+"                    Task created"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "<span>Be precise. If there is a bug/error, please describe how to reproduce it</span>"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "<span>Link toward error or additional information</span>"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "<span>Paste here the complete error message (ex: error code Odoo)</span>"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Access"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_created
+msgid "Back to my Home\n"
+"                        <span class=\"fa fa-long-arrow-right\"/>"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Bug report"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Choose a priority..."
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Choose a service..."
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Choose a type..."
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Description"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Priority"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Request type"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Service"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Submit\n"
+"                        <span class=\"fa fa-long-arrow-right\"/>"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_created
+msgid "Task created"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Task creation form"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_created
+msgid "Thanks for request!\n"
+"                        <br/>\n"
+"                        A new task has been saved and you can keep track on your request handling from your portal account!\n"
+"                        <br/>"
+msgstr ""
+
+#. module: project_task_portal_form
+#: model_terms:ir.ui.view,arch_db:project_task_portal_form.portal_task_creation_form
+msgid "Title"
+msgstr ""
+
