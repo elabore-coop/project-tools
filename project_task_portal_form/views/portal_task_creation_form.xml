@@ -4,7 +4,7 @@
         <t t-call="portal.portal_layout">
             <!-- <div id="wrap" class="col-lg-6 container"></div> -->
             <t t-set="additional_title">Task creation form</t>
-            <form action="/task/create" method="post">
+            <form action="/task/create" method="post" accept-charset="UTF-8" class="s_website_form col-md-12 mt32" data-model_name="project.task" data-force_action="" data-success_page="" enctype="multipart/form-data">
                 <div class="oe_structure" id="oe_structure_portal_task_creation_form_1" />
                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
                 <div class="row">
@@ -61,6 +61,19 @@
                         <textarea rows="4" name="bug_report" t-attf-class="form-control #{error.get('bug_report') and 'is-invalid' or ''}" t-att-value="bug_report" />
                         <span>Paste here the complete error message (ex: error code Odoo)</span>
                     </div>
+                </div>
+                <!-- ## IMPORT FILE -->
+                <div class="form-group form-field  form-field-binary" data-model-field="false" data-optional="true">
+                    <label class="col-form-label" for="attachment">
+                        <span>Join document</span>
+                    </label>
+                    <i>
+                        <input type="file" name="attachment" multiple="true" data-show-upload="true" data-show-caption="true" data-show-preview="true" />
+                    </i>
+                    <p class="form-text text-muted">
+                        <i>Join a screenshot to your request or any other helpfull document.</i>
+                        <br />
+                    </p>
                 </div>
                 <div class="row">
                     <div t-attf-class="form-group #{error.get('priority') and 'o_has_error' or ''} col-xl-6">

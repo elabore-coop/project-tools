@@ -3,7 +3,7 @@
 
 {
     "name": "project_task_portal_form",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Stéphan Sainléger",
