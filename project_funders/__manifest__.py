@@ -3,7 +3,7 @@
 
 {
     "name": "project_funders",
-    "version": "12.0.0.1.0",
+    "version": "13.0.0.1.0",
     "author": "Alusage",
     "website": "https://alusage.fr",
     "data": [
