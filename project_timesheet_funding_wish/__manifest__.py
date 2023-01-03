@@ -3,7 +3,7 @@
 
 {
     "name": "project_timesheet_funding_wish",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "author": "Elabore",
     "website": "https://github.com/elabore-coop/project-tools",
     "maintainer": "Stéphan Sainléger",
