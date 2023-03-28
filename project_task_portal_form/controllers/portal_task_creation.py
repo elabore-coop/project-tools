@@ -84,12 +84,7 @@ class PortalTaskCreation(CustomerPortal):
         if values.get("bug_report", False):
             description = description + "<br/><br/><b>BUG REPORT:</b><br/>" + values["bug_report"]
         values["description"] = description
-        values["attachments"] = []
-        for field_name, field_value in request.params.items():
-            # If the value of the field if a file
-            if field_name == 'attachment' and field_value != "":
-                field_value.field_name = field_name
-                values["attachments"].append(field_value)
+        values["attachments"] = request.httprequest.files.getlist("attachment")        
         return values
 
     @http.route(
