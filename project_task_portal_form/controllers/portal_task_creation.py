@@ -100,7 +100,7 @@ class PortalTaskCreation(CustomerPortal):
         values = self._compute_form_data(kwargs)
         values["project_id"] = user.default_project_id.id
         values["partner_id"] = user.partner_id.id
-        values["user_id"] = None
+        values["user_id"] = user.id
 
         # Create task
         task_id = request.env["project.task"].create(values)
