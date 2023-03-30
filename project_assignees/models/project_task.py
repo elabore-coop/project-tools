@@ -10,7 +10,7 @@ class Task(models.Model):
     @api.multi
     def subscribe_assignees(self):
         for task in self:
-            partner_ids = [a.partner_id.id for a in self.assignee_ids]
+            partner_ids = [a.partner_id.id for a in task.assignee_ids]
             task.message_subscribe(partner_ids)
 
     @api.multi
