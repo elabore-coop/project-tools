@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Template /my/home -->
+    <template id="portal_my_home_average_acceptable_time" name="Portal My Home: Average acceptable time" inherit_id="portal.portal_layout" priority="40">
+        <xpath expr="//div[hasclass('o_portal_my_details')]" position="inside">
+            <hr class="mt-1 mb-0"/>
+            <b>Average acceptable time</b>: <t t-esc="user_id.default_project_id.average_acceptable_time" t-options="{'widget': 'float_time'}"/>
+        </xpath>
+    </template>
+
+    <!-- Template /my/account -->
+    <template id="portal_my_details_average_acceptable_time" name="Portal My details: Average acceptable time" inherit_id="portal.portal_my_details">
+        <xpath expr="//input[@name='redirect']" position="before">
+            <div t-attf-class="form-group #{error.get('average_acceptable_time') and 'o_has_error' or ''} col-xl-6">
+                <label class="col-form-label" for="average_acceptable_time">Average acceptable time (h)</label>
+                <input 
+                    type="text" 
+                    name="average_acceptable_time" 
+                    t-attf-class="form-control #{error.get('average_acceptable_time') and 'is-invalid' or ''}" 
+                    t-att-value="average_acceptable_time or user_id.default_project_id.average_acceptable_time" 
+                    t-options="{'widget': 'float_time'}"
+                    />
+            </div>
+        </xpath>
+    </template>
+</odoo>
