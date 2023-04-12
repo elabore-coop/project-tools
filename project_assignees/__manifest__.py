@@ -78,6 +78,7 @@ This module is maintained by Elabore.
     },
     # always loaded
     "data": [
+        "data/project_assignees_data.xml",
         "views/project_task.xml",
         "views/portal_template.xml",
     ],
