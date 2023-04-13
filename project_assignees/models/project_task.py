@@ -12,10 +12,17 @@ class MailTracking(models.Model):
         """
         Track values of assignees changes in chatter
         """
-        if col_name == 'assignee_ids' and initial_value:
+        if col_name == 'assignee_ids':
             values = {'field': col_name, 'field_desc': col_info['string'], 'field_type': col_info['type'], 'track_sequence': track_sequence}
+            if initial_value:
+                values.update({
+                    'old_value_char': ', '.join([i.name for i in initial_value]),                
+                })
+            else:
+                values.update({
+                    'old_value_char': '',
+                })
             values.update({
-                'old_value_char': ', '.join([i.name for i in initial_value]),
                 'new_value_char': ', '.join([i.name for i in new_value])
             })
             return values
@@ -93,7 +100,7 @@ class Task(models.Model):
         if res == 'project.mt_task_new':
             return res
         # if assignees change, notify it
-        if 'assignee_ids' in init_values:
+        if len(init_values) == 1 and 'assignee_ids' in init_values:
             return 'project_assignees.mt_task_assignees'
         
         return super(Task, self)._track_subtype(init_values)
