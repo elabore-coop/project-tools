@@ -103,7 +103,7 @@ class PortalTaskCreation(CustomerPortal):
         values["user_id"] = user.id
 
         # Create task
-        task_id = request.env["project.task"].create(values)
+        task_id = request.env["project.task"].sudo().create(values) #use sudo to avoid access error on resource calendar when user_id is set
 
         # Add attachments
         for file in values.get("attachments", False):
