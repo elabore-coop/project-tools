@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!--Project KANBAN -->
+   <record id="project_project_view_kanban_inherit_average_acceptable_time" model="ir.ui.view">
+        <field name="name">project.project.kanban.inherit.average.acceptable.time</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="priority">999</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='o_project_kanban_main']" position="inside">
+                <div class="o_project_kanban_boxes">
+                    <span>Average acceptable time:<![CDATA[&nbsp;]]></span>
+                    <field name="average_acceptable_time" widget="float_time"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Project FORM -->
+    <record id="project_project_form_inherit_average_acceptable_time" model="ir.ui.view">
+        <field name="name">project.project.form.inherit.average.acceptable.time</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <field name="subtask_project_id" position="after">
+                <field name="average_acceptable_time" widget="float_time"/>
+            </field>
+        </field>
+    </record>
+</odoo>
