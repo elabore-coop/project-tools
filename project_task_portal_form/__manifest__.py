@@ -72,6 +72,7 @@ This module is maintained by Elabore.
     },
     # always loaded
     "data": [
+        "data/project_assignees_data.xml",
         "views/portal_task_creation_form.xml",
     ],
     # only loaded in demonstration mode
