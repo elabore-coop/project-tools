@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_visibility_followers_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-22 13:09+0000\n"
+"PO-Revision-Date: 2023-05-22 13:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_visibility_followers_portal
+#: model:ir.model.fields,field_description:project_visibility_followers_portal.field_project_project__display_name
+#: model:ir.model.fields,field_description:project_visibility_followers_portal.field_project_task__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: project_visibility_followers_portal
+#: model:ir.model.fields,field_description:project_visibility_followers_portal.field_project_project__id
+#: model:ir.model.fields,field_description:project_visibility_followers_portal.field_project_task__id
+msgid "ID"
+msgstr ""
+
+#. module: project_visibility_followers_portal
+#: model:ir.model.fields.selection,name:project_visibility_followers_portal.selection__project_project__privacy_visibility__followers_portal
+msgid "Invited portal users and invited internal users"
+msgstr "Utilisateurs portail invités et utilisateurs internes invités"
+
+#. module: project_visibility_followers_portal
+#: model:ir.model.fields,field_description:project_visibility_followers_portal.field_project_project____last_update
+#: model:ir.model.fields,field_description:project_visibility_followers_portal.field_project_task____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: project_visibility_followers_portal
+#: model:ir.model.fields,help:project_visibility_followers_portal.field_project_project__privacy_visibility
+msgid ""
+"People to whom this project and its tasks will be visible.\n"
+"\n"
+"- Invited internal users: when following a project, internal users will get access to all of its tasks without distinction. Otherwise, they will only get access to the specific tasks they are following.\n"
+" A user with the project > administrator access right level can still access this project and its tasks, even if they are not explicitly part of the followers.\n"
+"\n"
+"- All internal users: all internal users can access the project and all of its tasks without distinction.\n"
+"\n"
+"- Invited portal users and all internal users: all internal users can access the project and all of its tasks without distinction.\n"
+"When following a project, portal users will get access to all of its tasks without distinction. Otherwise, they will only get access to the specific tasks they are following."
+msgstr ""
+"Personnes pour lesquelles ce projet et ses tâches seront visibles.\n"
+"\n"
+"- Utilisateurs internes invités : lorsqu'ils sont abonnés à un projet, les utilisateurs internes auront accès à toutes ses tâches sans distinction. Autrement, ils auront uniquement accès aux tâches spécifiques auxquelles ils sont abonnés.\n"
+" Un utilisateur avec le niveau de droits d'accès projet > administrateur peut toujours accéder au projet et à ses tâches, même s'il ne fait pas explicitement partie des abonnés.\n"
+"\n"
+"- Tous les utilisateurs internes : tous les utilisateurs internes peuvent accéder au projet et à toutes ses tâches sans distinction.\n"
+"\n"
+"- Les utilisateurs portail invités et tous les utilisateurs internes : tous les utilisateurs internes peuvent accéder au projet et à toutes ses tâches sans distinction.\n"
+"Quand ils suivent un projet, les utilisateurs portail auront accès à toutes ses tâches sans distinction. Autrement, ils auront uniquement accès aux tâches spécifiques auxquelles ils sont abonnés."
+
+#. module: project_visibility_followers_portal
+#: model:ir.model,name:project_visibility_followers_portal.model_project_project
+msgid "Project"
+msgstr "Projet"
+
+#. module: project_visibility_followers_portal
+#: model:ir.model,name:project_visibility_followers_portal.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: project_visibility_followers_portal
+#: code:addons/project_visibility_followers_portal/models/project_task.py:0
+#, python-format
+msgid ""
+"The project visibility setting doesn't allow portal users to see the "
+"project's tasks. (%s)"
+msgstr ""
+"Le paramètre de visibilité du projet ne permet pas aux utilisateurs portail "
+"de voir les tâches du projet. (%s)"
+
+#. module: project_visibility_followers_portal
+#: code:addons/project_visibility_followers_portal/models/project_task.py:0
+#, python-format
+msgid ""
+"The task cannot be shared with the recipient(s) because the privacy of the "
+"project is too restricted. Set the privacy of the project to 'Visible by "
+"following customers' in order to make it accessible by the recipient(s)."
+msgstr ""
+"La tâche ne peut pas être partagée avec le(s) destinataire(s) car la "
+"confidentialité du projet est trop restreinte. Définissez la confidentialité"
+" sur \"Visible par les clients suiveurs\" afin de la rendre accessible au(x)"
+" destinataire(s)."
+
+#. module: project_visibility_followers_portal
+#: model:ir.model.fields,field_description:project_visibility_followers_portal.field_project_project__privacy_visibility
+msgid "Visibility"
+msgstr "Visibilité"
