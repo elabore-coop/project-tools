@@ -1,0 +1,20 @@
+<!-- todo: remove the date_start and date_end from the Extra Info Tab -->
+<odoo>
+    <data>
+
+        <record id="view_project_form_visibility_followers_portal" model="ir.ui.view">
+            <field name="name">project.form.visibility.followers.portal</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='allowed_internal_user_ids']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('privacy_visibility', '!=', 'followers'),('privacy_visibility', '!=', 'followers_portal')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='allowed_portal_user_ids']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('privacy_visibility', '!=', 'portal'),('privacy_visibility', '!=', 'followers_portal')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
