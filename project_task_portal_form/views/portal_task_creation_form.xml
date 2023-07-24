@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_task_creation_form" name="Portal: Task creation form">
+        <t t-call="portal.portal_layout">
+            <!-- <div id="wrap" class="col-lg-6 container"></div> -->
+            <t t-set="additional_title">Task creation form</t>
+            <form 
+                action="/task/create" 
+                method="post" 
+                accept-charset="UTF-8" 
+                class="s_website_form col-md-12 mt32" 
+                data-model_name="project.task" 
+                data-force_action="" 
+                data-success_page="" 
+                enctype="multipart/form-data">
+                
+                <div class="oe_structure" id="oe_structure_portal_task_creation_form_1" />
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <div class="row">
+                    <div t-attf-class="form-group #{error.get('name') and 'o_has_error' or ''} col-xl-12">
+                        <label class="col-form-label" for="name">Title</label>
+                        <label class="text-danger"> *</label>
+                        <input type="text" name="name" t-attf-class="form-control #{error.get('name') and 'is-invalid' or ''}" t-att-value="name" required="True" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div t-attf-class="form-group #{error.get('request_type_id') and 'o_has_error' or ''} col-xl-6">
+                        <label class="col-form-label" for="request_type_id">Request type</label>
+                        <label class="text-danger"> *</label>
+                        <select name="request_type_id" t-attf-class="form-control" required="True">
+                            <option value="">Choose a type...</option>
+                            <t t-foreach="request_types or []" t-as="request_type">
+                                <option t-att-value="request_type.id">
+                                    <t t-esc="request_type.name" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div t-attf-class="form-group #{error.get('service_id') and 'o_has_error' or ''} col-xl-6">
+                        <label class="col-form-label" for="service_id">Service</label>
+                        <label class="text-danger"> *</label>
+                        <select name="service_id" t-attf-class="form-control" required="True">
+                            <option value="">Choose a service...</option>
+                            <t t-foreach="task_services or []" t-as="task_service">
+                                <option t-att-value="task_service.id">
+                                    <t t-esc="task_service.name" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div t-attf-class="form-group #{error.get('small_description') and 'o_has_error' or ''} col-xl-12">
+                        <label class="col-form-label" for="small_description">Description</label>
+                        <label class="text-danger"> *</label>
+                        <textarea rows="4" name="small_description" t-attf-class="form-control #{error.get('small_description') and 'is-invalid' or ''}" t-att-value="small_description" required="True" />
+                        <span>Be precise. If there is a bug/error, please describe how to reproduce it</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div t-attf-class="form-group #{error.get('access') and 'o_has_error' or ''} col-xl-12">
+                        <label class="col-form-label" for="access">Access</label>
+                        <input type="text" name="access" t-attf-class="form-control #{error.get('access') and 'is-invalid' or ''}" t-att-value="access" />
+                        <span>Link toward error or additional information</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div t-attf-class="form-group #{error.get('bug_report') and 'o_has_error' or ''} col-xl-12">
+                        <label class="col-form-label" for="bug_report">Bug report</label>
+                        <textarea rows="4" name="bug_report" t-attf-class="form-control #{error.get('bug_report') and 'is-invalid' or ''}" t-att-value="bug_report" />
+                        <span>Paste here the complete error message (ex: error code Odoo)</span>
+                    </div>
+                </div>
+                <!-- ## IMPORT FILE -->
+                <div class="form-group form-field  form-field-binary" data-model-field="false" data-optional="true">
+                    <label class="col-form-label" for="attachment">
+                        <span>Join document</span>
+                    </label>
+                    <i>
+                        <input type="file" name="attachment" multiple="true" data-show-upload="true" data-show-caption="true" data-show-preview="true" />
+                    </i>
+                    <p class="form-text text-muted">
+                        <i>Join a screenshot to your request or any other helpfull document.</i>
+                        <br />
+                    </p>
+                </div>
+                <div class="row">
+                    <div t-attf-class="form-group #{error.get('priority') and 'o_has_error' or ''} col-xl-6">
+                        <label class="col-form-label" for="priority">Priority</label>
+                        <label class="text-danger"> *</label>
+                        <select name="priority" t-attf-class="form-control" required="True">
+                            <option value="">Choose a priority...</option>
+                            <t t-foreach="priorities or []" t-as="priority">
+                                <option t-att-value="priority['id']">
+                                    <t t-esc="priority['name']" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <br />
+                    <button type="submit" class="btn btn-primary float-right mb32 ">
+                        Submit
+                        <span class="fa fa-long-arrow-right" />
+                    </button>
+                </div>
+                <div class="oe_structure" id="oe_structure_portal_task_creation_form_2" />
+            </form>
+        </t>
+    </template>
+
+
+    <template id="portal_task_created" name="Portal: Task created">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">Task created</t>
+            <form action="/my/tasks" method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <h3>
+                    <br />
+                    Task created
+                </h3>
+                <div>
+                    <p>
+                        Thanks for request!
+                        <br />
+                        A new task has been saved and you can keep track on your request handling from your portal account!
+                        <br />
+                    </p>
+                </div>
+                <div class="clearfix">
+                    <br />
+                    <button type="submit" class="btn btn-primary float-right mb32 ">
+                        Back to my Tasks
+                        <span class="fa fa-long-arrow-right" />
+                    </button>
+                </div>
+            </form>
+        </t>
+    </template>
+</odoo>
