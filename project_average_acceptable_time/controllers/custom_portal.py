@@ -7,7 +7,7 @@ from odoo.addons.portal.controllers.portal import CustomerPortal
 class CustomCustomerPortal(CustomerPortal):
     @route(["/my/account"], type="http", auth="user", website=True)
     def account(self, redirect=None, **post):
-        self.OPTIONAL_BILLING_FIELDS.append("average_acceptable_time")
+        self.OPTIONAL_BILLING_FIELDS.append("average_acceptable_time") #unecessary save in res partner, but necessary to avoid error on form post
 
         response = super(CustomCustomerPortal, self).account(redirect, **post)
         

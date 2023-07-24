@@ -24,6 +24,7 @@
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
             <field name="subtask_project_id" position="after">
+                <label for="average_acceptable_time" />
                 <field name="average_acceptable_time" widget="float_time"/>
             </field>
         </field>
