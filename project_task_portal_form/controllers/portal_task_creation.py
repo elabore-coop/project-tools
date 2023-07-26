@@ -79,18 +79,17 @@ class PortalTaskCreation(CustomerPortal):
         description = ""
         if values.get("small_description", False):
             description = description + "<b>DESCRIPTION:</b><br/>" + values["small_description"] 
+            del values['small_description']
         if values.get("access", False):
             description = description + "<br/><br/><b>ACCESS:</b><br/>" + values["access"] 
+            del values['access']
         if values.get("bug_report", False):
             description = description + "<br/><br/><b>BUG REPORT:</b><br/>" + values["bug_report"]
+            del values['bug_report']        
 
         values["description"] = description
         values["attachments"] = request.httprequest.files.getlist("attachment")        
 
-        del values['small_description']
-        del values['access']
-        del values['bug_report']        
-        
         return values
 
     @http.route(
