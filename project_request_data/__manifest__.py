@@ -3,7 +3,7 @@
 
 {
     "name": "project_request_data",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Stéphan Sainléger",
