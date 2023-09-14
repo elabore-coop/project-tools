@@ -12,4 +12,15 @@
             </xpath>
         </field>
     </record>
+    <record id="view_task_kanban_request_data" model="ir.ui.view">
+        <field name="name">project.task.kanban.request.data</field>
+        <field name="inherit_id" ref="project.view_task_kanban" />
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="before">
+                <span style="background:lightblue; font-size:11px"><field name="service_id"/></span>
+                <span style="background:lightsteelblue; font-size:11px"><field name="request_type_id"/></span>
+            </xpath>
+        </field>
+    </record>
 </odoo>
