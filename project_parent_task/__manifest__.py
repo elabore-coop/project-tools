@@ -24,6 +24,7 @@ Installation
 ============
 
 Use Odoo normal module installation procedure to install ``project_parent_tasks``.
+=======
 
 Known issues / Roadmap
 ======================
