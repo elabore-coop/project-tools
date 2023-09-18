@@ -21,6 +21,9 @@
             <filter name="my_tasks" position="attributes">
                 <attribute name="domain">['|', ('user_id', '=', uid), ('assignee_ids', 'in', uid)]</attribute>
             </filter>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="assignee_ids" filter_domain="[('assignee_ids.user_ids.name', 'ilike', self)]"/>
+            </xpath>
         </field>
     </record>
 </odoo>
