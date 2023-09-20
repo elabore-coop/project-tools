@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="project.view_task_form2" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='parent_id']" position="attributes">
-                <attribute name="domain">[('project_id','=', active_id)]</attribute>
+                <attribute name="domain">[('project_id','=', project_id)]</attribute>
             </xpath>
         </field>
     </record>
