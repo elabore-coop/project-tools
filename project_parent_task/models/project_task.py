@@ -5,7 +5,7 @@ class Task(models.Model):
     _inherit = "project.task"
 
     #overwrite others def _compute_sale_line(self)
-    #we want to skip _compute_sale_line in /home/laetitia/elabore/odoo/OCB/addons/sale_timesheet/models/project.py file
+    #we want to skip _compute_sale_line in sale_timesheet/models/project.py file
     
     @api.depends('commercial_partner_id', 'sale_line_id.order_partner_id.commercial_partner_id', 'parent_id.sale_line_id', 'project_id.sale_line_id')
     def _compute_sale_line(self):
