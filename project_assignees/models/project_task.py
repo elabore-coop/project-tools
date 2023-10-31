@@ -16,5 +16,5 @@ class Task(models.Model):
         project_id = vals.get('project_id', [])
         if project_id and assignee_ids and not assignee_ids[0][2]:
             project = self.env['project.project'].browse(project_id)
-            assignee_ids[0][2] = str(project.user_id.id)
+            if project and project.user_id: assignee_ids[0][2] = str(project.user_id.id)
         return super().create(vals)
