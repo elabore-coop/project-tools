@@ -9,16 +9,17 @@
     "maintainer": "Laetitia Da Costa",
     "license": "AGPL-3",
     "category": "Project",
-    "summary": "in parent's tasks dropdown list, show only tasks from the current projet",
+    "summary": "in parent's tasks dropdown field, show only tasks from the current projet",
     "description": """
    :image: https://img.shields.io/badge/licence-AGPL--3-blue.svg
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 ====================
-project_request_data
+project_parent_tasks
 ====================
 
-Add several fields in tasks, that provide several data on the request
+when selecting a parent task in a task, display only tasks from the current project
+
 Installation
 ============
 
