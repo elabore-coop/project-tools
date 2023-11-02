@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="portal_my_task_assignees" name="My Task: Assignees" inherit_id="project.portal_my_task" priority="40">
-        <xpath expr="//div[hasclass('flex-grow-0')]/../../.." position="inside">
-            <div class="col-12 col-md-6 pb-2" t-if="task.assignee_ids">
+        <xpath expr="//t[@t-foreach='task.user_ids']" position="after">
+            <div class="col-12 col-md-12 pb-2" t-if="task.assignee_ids">
                 <strong>Other assignees</strong>
                 <div class="row">
-                    <t t-foreach="task.assignee_ids" t-as="assignee">
-                        <div class="col flex-grow-0 pr-3">
-                            <img t-if="assignee.image" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(assignee.image)" alt="Contact" />
-                            <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact" />
-                        </div>
-                        <div class="col pl-md-0">
-                            <strong>
-                                <span t-field="assignee.name" />
-                            </strong>
-                            <span t-field="assignee.email" />
-                            <span t-field="assignee.phone" />
+                    <t t-foreach="task.assignee_ids" t-as="user">
+                        <div class="d-flex mb-3 flex-nowrap">
+                            <img class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(user.avatar_1024)" alt="Contact"/>
+                            <div class="ms-2">
+                                <div t-esc="user" t-options='{"widget": "contact", "fields": ["name"]}'/>
+                                <a t-attf-href="tel:{{user.phone}}" t-if="user.phone"><div t-esc="user" t-options='{"widget": "contact", "fields": ["phone"]}'/></a>
+                                <a t-if="user.email" class="text-break" t-attf-href="mailto:{{user.email}}">
+                                    <div t-out="user" t-options='{"widget": "contact", "fields": ["email"]}'/>
+                                </a>
+                            </div>
                         </div>
                     </t>
                 </div>
