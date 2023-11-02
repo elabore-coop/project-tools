@@ -51,7 +51,7 @@ class PortalTaskCreation(CustomerPortal):
         website=True,
     )
     def portal_task_creation(self, access_token=None, redirect=None, **kw):
-        values = self._task_get_page_view_values(request.env.user.partner_id, access_token, **kw)
+        values = self._taskform_get_page_view_values(request.env.user.partner_id, access_token, **kw)
         request_types = request.env["request.type"].sudo().search([])
         task_services = request.env["task.service"].sudo().search([])
         priorities = self._get_task_priorities()
@@ -105,7 +105,9 @@ class PortalTaskCreation(CustomerPortal):
         values = self._compute_form_data(kwargs)
         values["project_id"] = user.default_project_id.id
         values["partner_id"] = user.partner_id.id
-        values["user_id"] = user.id
+        values["user_ids"] = [(6, 0, [user.id])]
+
+
 
         files = values.get("attachments", False)
         del values['attachments']      
