@@ -26,4 +26,16 @@
             </xpath>
         </field>
     </record>
+
+    <record id="view_task_form2_allow_portal_users_as_assignee" model="ir.ui.view">
+        <field name="name">view.task.form2.allow.portal.users.as.assignee</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('share', '=', True)]</attribute>
+            </xpath>
+        </field>
+    </record>
 </odoo>
