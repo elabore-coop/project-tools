@@ -3,7 +3,7 @@
 
 {
     "name": "project_average_acceptable_time",
-    "version": "12.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Elabore",
     "website": "https://github.com/elabore-coop/project-tools",
     "maintainer": "Clément Thomas",

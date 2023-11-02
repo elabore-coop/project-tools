@@ -8,7 +8,7 @@
         <field name="inherit_id" ref="project.view_project_kanban"/>
         <field name="priority">999</field>
         <field name="arch" type="xml">
-            <xpath expr="//div[@class='o_project_kanban_main']" position="inside">
+            <xpath expr="//div[@class='o_project_kanban_main ']" position="inside">
                 <div class="o_project_kanban_boxes">
                     <span>Average acceptable time:<![CDATA[&nbsp;]]></span>
                     <field name="average_acceptable_time" widget="float_time"/>
@@ -23,10 +23,14 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
-            <field name="subtask_project_id" position="after">
-                <label for="average_acceptable_time" />
-                <field name="average_acceptable_time" widget="float_time"/>
-            </field>
+            <xpath expr="//div[@id='subtask_settings']/div[@class='o_setting_right_pane']" position="inside">
+                <div class="o_settings_average_acceptable_time" style="margin-top:10px;">
+                     <!-- <span>Average acceptable time:<![CDATA[&nbsp;]]></span> -->
+                     <label for="average_acceptable_time"/>
+                     <field name="average_acceptable_time" widget="float_time"/>
+                </div>
+            </xpath>
         </field>
     </record>
+    
 </odoo>
