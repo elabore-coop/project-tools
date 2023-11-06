@@ -3,7 +3,7 @@
 
 {
     "name": "project_name_from_lead",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Clément Thomas",
@@ -13,6 +13,7 @@
     # any module necessary for this one to work correctly
     "depends": [
         "base",
+        "crm",
         "sale_project",
     ],
     "qweb": [
