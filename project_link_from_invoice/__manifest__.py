@@ -3,7 +3,7 @@
 
 {
     "name": "project_link_from_invoice",
-    "version": "14.0.0.0.0",
+    "version": "16.0.1.0.0",
     "author": "Elabore",
     "website": "https://github.com/elabore-coop/project-tools",
     "maintainer": "Clément Thomas",
