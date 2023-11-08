@@ -3,7 +3,7 @@
 
 {
     "name": "project_visibility_followers_portal",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Elabore",
     "website": "https://github.com/elabore-coop/project-tools",
     "maintainer": "Clément Thomas",
@@ -77,7 +77,6 @@ This module is maintained by Elabore.
     },
     # always loaded
     "data": [
-        "views/project_views.xml",
         "security/project_security.xml"
     ],
     # only loaded in demonstration mode
