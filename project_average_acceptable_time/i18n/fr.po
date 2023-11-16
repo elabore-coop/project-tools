@@ -17,13 +17,19 @@ msgstr ""
 
 #. module: project_average_acceptable_time
 #: model_terms:ir.ui.view,arch_db:project_average_acceptable_time.portal_my_home_average_acceptable_time
-msgid "<b>Average acceptable time</b>:"
-msgstr "<b>Temps moyen acceptable</b>:"
+msgid "<b>Average acceptable time of </b>:"
+msgstr "<b>Temps moyen acceptable de </b>:"
+
+#. module: project_project_view_kanban_inherit_average_acceptable_time
+#: model_terms:ir.ui.view,arch_db:project_average_acceptable_time.portal_my_home_average_acceptable_time
+msgid "The average acceptable time is the time allowed which does not require validation to start carrying out the task. For example, if you choose 30 min then all tasks not exceeding 30 min can be processed directly without waiting for validation from you."
+msgstr "Le temps moyen acceptable est le temps accordé qui ne nécessite pas de validation pour lancer la réalisation de la tâche. Par exemple, si vous choisissez 30min alors, toutes les tâches ne dépassant pas 30 min, peuvent être traitées directement sans attendre une validation de votre part."
+
 
 #. module: project_average_acceptable_time
 #: model_terms:ir.ui.view,arch_db:project_average_acceptable_time.portal_my_home_average_acceptable_time
-msgid "Average acceptable time"
-msgstr "Temps moyen acceptable"
+msgid "Average acceptable time of"
+msgstr "Temps moyen acceptable de"
 
 #. module: project_average_acceptable_time
 #: model_terms:ir.ui.view,arch_db:project_average_acceptable_time.project_project_view_kanban_inherit_average_acceptable_time
@@ -41,6 +47,12 @@ msgid "Average acceptable time (h)"
 msgstr "Temps moyen acceptable (h)"
 
 #. module: project_average_acceptable_time
+#: model_terms:ir.ui.view,arch_db:project_average_acceptable_time.portal_my_details_average_acceptable_time
+msgid "<small>ex : number format should be 0.5 for 30 min (and not 0,5)</small>"
+msgstr "<small>ex : le format doit être 0.5 pour 30 min (et pas 0,5)</small"
+
+#. module: project_average_acceptable_time
 #: model:ir.model,name:project_average_acceptable_time.model_project_project
 msgid "Project"
 msgstr "Projet"
+
