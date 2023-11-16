@@ -3,7 +3,7 @@
 
 {
     "name": "project_assignees",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.2.0",
     "author": "Elabore",
     "website": "https://github.com/elabore-coop/project-tools",
     "maintainer": "Stéphan Sainléger",
