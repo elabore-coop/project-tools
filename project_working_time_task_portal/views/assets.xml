@@ -1,0 +1,7 @@
+<odoo>
+    <template id="assets_frontend" name="project_working_time_task_portal_assets_frontend" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/project_working_time_task_portal/static/src/css/main.css"/>
+        </xpath>
+    </template>
+</odoo>

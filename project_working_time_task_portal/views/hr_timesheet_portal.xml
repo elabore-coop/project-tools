@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_task_planned_hours" name="My Task: planned hours" inherit_id="hr_timesheet.portal_my_task" priority="40">
+        <xpath expr="//t[@t-call='hr_timesheet.portal_timesheet_table']" position="before">
+            <div class="row">
+                <div class="col-12 col-md-6 pb-2">
+                    <span style="font-weight:bold;">Planned Hours: </span>
+                    <span t-field="task.planned_hours" t-options="{&quot;widget&quot;: &quot;timesheet_uom_no_toggle&quot;}"/> 
+                    <t t-if="task.allow_subtasks and task.subtask_count > 0">
+                        <div>
+                            <strong>Subtask Planned Hours: </strong> 
+                            <span t-field="task.subtask_planned_hours" t-options="{&quot;widget&quot;: &quot;timesheet_uom_no_toggle&quot;}"/>
+                        </div>
+                    </t>
+                </div>
+                <t t-if="task.progress > 0">
+                    <div class="col-12 col-md-6 pb-2">
+                        <strong>Progress: </strong>
+                        <t t-set="progress" t-value="task.progress"/>
+                        <div class="oe-project_working_time_task_portal progressbar" t-attf-style="width: #{progress}%;">
+                            <t t-esc="progress"/>%
+                        </div>          
+                    </div>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="portal_my_task_remaining_hours" name="My Task: remaining hours" inherit_id="hr_timesheet.portal_timesheet_table" priority="40">
+        <xpath expr="//t[@t-name='hr_timesheet.portal_timesheet_table']/table/tfoot/tr" position="inside">
+            <t t-if="task.planned_hours > 0">
+                <tr>
+                    <th colspan="3"/>
+                    <th class="text-right">Remaining Hours: <span t-field="task.remaining_hours" t-options="{&quot;widget&quot;: &quot;float_time&quot;}"/></th>
+                </tr>
+            </t>           
+        </xpath>
+    </template>
+</odoo>
