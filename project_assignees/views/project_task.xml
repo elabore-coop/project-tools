@@ -34,7 +34,7 @@
         <field name="priority" eval="99" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='user_id']" position="attributes">
-                <attribute name="domain">[('share', '=', True)]</attribute>
+                <attribute name="domain">['|', ('share', '=', False), ('share', '=', True)]</attribute>
             </xpath>
         </field>
     </record>
