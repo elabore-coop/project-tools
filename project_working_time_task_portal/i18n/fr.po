@@ -34,3 +34,41 @@ msgstr "<strong>Heures Planifiées Sous-tâches: </strong>"
 #: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.portal_my_task_remaining_hours
 msgid "Remaining Hours:"
 msgstr "Heures restantes:"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__billable_remaining_hours
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Billable Remaining Hours"
+msgstr "Heures restantes facturables"
+
+#. module: project_working_time_task_portal
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Billable Remaining Days"
+msgstr "Jours restants facturables"
+
+#. module: project_working_time_task_portal
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Billable Effective Days"
+msgstr "Jours passés facturables"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__billable_effective_hours
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Billable Effective Hours"
+msgstr "Heures passées facturables"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__subtask_billable_effective_hours
+msgid "Subtask Billable Effective Hours"
+msgstr "Heures passées facturables Sous-tâches"
+
+#. module: project_working_time_task_portal
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Non Billable Effective Days"
+msgstr "Jours passés non facturables"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__non_billable_effective_hours
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Non Billable Effective Hours"
+msgstr "Heures passées non facturables"

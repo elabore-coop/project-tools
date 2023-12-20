@@ -2,7 +2,7 @@
 project_working_time_task_portal
 ===============
 
-add planned hours and remaining hours in the task portal view
+add billable planned hours and billable remaining hours in the task portal view so the portal user only see billable timesheet lines
 
 Installation
 ============
@@ -18,7 +18,7 @@ None yet.
 Bug Tracker
 ===========
 
-Bugs are tracked on `our issues website <https://github.com/elabore-coop/project_working_time_task_portal/issues>`_. In case of
+Bugs are tracked on `our issues website <https://github.com/elabore-coop/project-tool/issues>`_. In case of
 trouble, please check there if your issue has already been
 reported. If you spotted it first, help us smashing it by providing a
 detailed and welcomed feedback.

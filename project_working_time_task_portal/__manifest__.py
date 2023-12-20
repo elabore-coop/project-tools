@@ -3,16 +3,18 @@
 
 {
     "name": "project_working_time_task_portal",
-    "version": "14.0.0.0",
+    "version": "14.0.2.0.0",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Boris Gallet",
     "license": "AGPL-3",
     "category": "tools",
-    "summary": "add planned hours and remaining hours in the task portal view",
+    "summary": "add billable planned hours and billable remaining hours in the task portal view so the portal user only see billable timesheet lines",
     # any module necessary for this one to work correctly
     "depends": [
         "base",
+        "project",
+        "sale_timesheet_line_exclude"
     ],
     "qweb": [],
     "external_dependencies": {
@@ -20,11 +22,9 @@
     },
     # always loaded
     "data": [
-        # "security/security.xml",
-        # "security/ir.model.access.csv",
-        "views/hr_timesheet_portal.xml",
         "views/assets.xml",
-        # "data/data.xml",
+        "views/hr_timesheet_portal.xml",
+        "views/hr_timesheet_view_task_form2.xml"
     ],
     # only loaded in demonstration mode
     "demo": [],
