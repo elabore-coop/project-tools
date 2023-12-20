@@ -13,10 +13,10 @@
                         </div>
                     </t>
                 </div>
-                <t t-if="task.progress > 0">
+                <t t-if="task.billable_progress > 0">
                     <div class="col-12 col-md-6 pb-2">
                         <strong>Progress: </strong>
-                        <t t-set="progress" t-value="task.progress"/>
+                        <t t-set="progress" t-value="task.billable_progress"/>
                         <div class="oe-project_working_time_task_portal progressbar" t-attf-style="width: #{progress}%;">
                             <t t-esc="progress"/>%
                         </div>          
@@ -27,13 +27,31 @@
     </template>
 
     <template id="portal_my_task_remaining_hours" name="My Task: remaining hours" inherit_id="hr_timesheet.portal_timesheet_table" priority="40">
+    
+        <xpath expr="//tr[@t-foreach='timesheets']" position="attributes">
+            <attribute name="t-if">not timesheet.exclude_from_sale_order</attribute>
+        </xpath>
+
+        <xpath expr="//tfoot/tr/th/span" position="replace">
+            <span t-esc="round(sum(timesheets.filtered(lambda t: not t.exclude_from_sale_order).mapped('unit_amount')), 2)"
+                  t-options="{&quot;widget&quot;: &quot;float_time&quot;}"/>
+        </xpath>
+        
         <xpath expr="//t[@t-name='hr_timesheet.portal_timesheet_table']/table/tfoot/tr" position="inside">
             <t t-if="task.planned_hours > 0">
                 <tr>
                     <th colspan="3"/>
-                    <th class="text-right">Remaining Hours: <span t-field="task.remaining_hours" t-options="{&quot;widget&quot;: &quot;float_time&quot;}"/></th>
+                    <th class="text-right">Remaining Hours: <span t-field="task.billable_remaining_hours" t-options="{&quot;widget&quot;: &quot;float_time&quot;}"/></th>
                 </tr>
             </t>           
         </xpath>
+
     </template>
+
+    <template id="portal_my_task_subtask_timesheet_table" name="My Task Subtask Timesheet Table: hide not billable" inherit_id="hr_timesheet.portal_subtask_timesheet_tables" priority="40">
+        <xpath expr="//tr[@t-foreach='timesheets']" position="attributes">
+            <attribute name="t-if">not timesheet.exclude_from_sale_order</attribute>
+        </xpath>
+    </template>
+
 </odoo>
