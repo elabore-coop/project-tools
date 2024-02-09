@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Task tree view -->
+    <!--
+        * Add create date column (hide)
+
+    -->
+    <record id="view_task_tree2_project_usability_misc" model="ir.ui.view">
+        <field name="name">project.task.tree.project.usability</field>
+        <field name="model">project.task</field>        
+        <field name="inherit_id" ref="project.view_task_tree2" />
+        <field name="arch" type="xml">
+            <field name="stage_id" position="after">
+                <field name="create_date" optional="hide" />
+            </field>
+        </field>
+    </record>
+</odoo>
