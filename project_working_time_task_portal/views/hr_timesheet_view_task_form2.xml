@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="project_working_time_view_task_form" model="ir.ui.view">
+        <field name="name">project.working.time.view.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='effective_hours']" position="after">
+                <span>
+                    <label class="font-weight-bold" for="billable_effective_hours" string="Billable Effective Hours" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', True)]}"/>
+                    <label class="font-weight-bold" for="billable_effective_hours" string="Billable Effective Days" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', False)]}"/>
+                </span>
+                <field name="billable_effective_hours" widget="timesheet_uom" class="mt-2" attrs="{'invisible' : [('planned_hours', '=', 0.0)]}" nolabel="1"/>
+                <span>
+                    <label class="font-weight-bold" for="non_billable_effective_hours" string="Non Billable Effective Hours" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', True)]}"/>
+                    <label class="font-weight-bold" for="non_billable_effective_hours" string="Non Billable Effective Days" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', False)]}"/>
+                </span>
+                <field name="non_billable_effective_hours" widget="timesheet_uom" class="mt-2" attrs="{'invisible' : [('planned_hours', '=', 0.0)]}" nolabel="1"/>
+            </xpath>
+            <xpath expr="//field[@name='remaining_hours']" position="after">
+                <span>
+                    <label class="font-weight-bold" for="billable_remaining_hours" string="Billable Remaining Hours" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', True)]}"/>
+                    <label class="font-weight-bold" for="billable_remaining_hours" string="Billable Remaining Days" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', False)]}"/>
+                </span>
+                <field name="billable_remaining_hours" widget="timesheet_uom" class="oe_subtotal_footer_separator" attrs="{'invisible' : [('planned_hours', '=', 0.0)]}" nolabel="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+/**
+ *  Main 
+ */
+
+
+
+.oe-project_working_time_task_portal.progressbar {
+    height: 20px;
+    background-color: #7c7cac; /* Couleur de la barre de progression */
+    text-align: center;
+    color: white; /* Couleur du texte dans la barre de progression */
+    line-height: 20px; /* Aligner le texte verticalement */
+}
+
