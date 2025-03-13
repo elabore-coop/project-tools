@@ -40,6 +40,10 @@ msgstr "Heures restantes:"
 #: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
 msgid "Billable Remaining Hours"
 msgstr "Heures restantes facturables"
+#. module: project_working_time_task_portal
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.portal_tasks_list_inherit
+msgid "Billable Hours"
+msgstr "Heures facturables"
 
 #. module: project_working_time_task_portal
 #: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_tasks_list_inherit" inherit_id="project.portal_tasks_list">
+        <xpath expr="//thead/tr/th[7]" position="replace"/>
+        <xpath expr="//thead/tr/th[last()]" position="before">
+            <th t-if="not is_uom_day" class="text-end">Billable Hours</th>
+        </xpath>
+        <xpath expr="//tbody/t/tr/td[7]" position="replace"/>
+        <xpath expr="//tbody/t/tr/td[last()]" position="before">
+            <td class="text-end">
+                <t t-if="not is_uom_day">
+                    <span t-field="task.billable_effective_hours"
+                        t-options='{"widget": "float_time"}' />
+                    <t t-if="task.planned_hours > 0"> / <span t-field="task.planned_hours"
+                            t-options='{"widget": "float_time"}' />
+                    </t>
+                </t>
+            </td>
+        </xpath>
+    </template>
+</odoo>

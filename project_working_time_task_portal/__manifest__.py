@@ -3,7 +3,7 @@
 
 {
     "name": "project_working_time_task_portal",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Boris Gallet",
@@ -14,7 +14,8 @@
     "depends": [
         "base",
         "project",
-        "sale_timesheet_line_exclude"
+        "sale_timesheet_line_exclude",
+        "hr_timesheet",
     ],
     "qweb": [],
     "external_dependencies": {
@@ -23,7 +24,8 @@
     # always loaded
     "data": [
         "views/hr_timesheet_portal.xml",
-        "views/hr_timesheet_view_task_form2.xml"
+        "views/hr_timesheet_view_task_form2.xml",
+        "views/portal_tasks_list.xml"
     ],
     "assets": {
         "web.assets_frontend": [
