@@ -3,7 +3,7 @@
 
 {
     "name": "project_working_time_task_portal",
-    "version": "16.0.1.0.1",
+    "version": "16.0.1.0.2",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Boris Gallet",
