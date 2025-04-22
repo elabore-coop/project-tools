@@ -37,6 +37,7 @@ class Task(models.Model):
         string="Subtask Billable Effective Hours",
         store=True,
         compute_sudo=True,
+        recursive=True,
     )
 
     @api.depends('timesheet_ids.unit_amount')
