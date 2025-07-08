@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 09:37+0000\n"
-"PO-Revision-Date: 2023-12-04 09:37+0000\n"
+"POT-Creation-Date: 2025-07-08 13:43+0000\n"
+"PO-Revision-Date: 2025-07-08 15:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,24 +31,9 @@ msgid "<strong>Subtask Planned Hours: </strong>"
 msgstr "<strong>Heures Planifiées Sous-tâches: </strong>"
 
 #. module: project_working_time_task_portal
-#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.portal_my_task_remaining_hours
-msgid "Remaining Hours:"
-msgstr "Heures restantes:"
-
-#. module: project_working_time_task_portal
-#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__billable_remaining_hours
-#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
-msgid "Billable Remaining Hours"
-msgstr "Heures restantes facturables"
-#. module: project_working_time_task_portal
-#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.portal_tasks_list_inherit
-msgid "Billable Hours"
-msgstr "Heures facturables"
-
-#. module: project_working_time_task_portal
-#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
-msgid "Billable Remaining Days"
-msgstr "Jours restants facturables"
+#: model:ir.model,name:project_working_time_task_portal.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
 
 #. module: project_working_time_task_portal
 #: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
@@ -62,9 +47,25 @@ msgid "Billable Effective Hours"
 msgstr "Heures passées facturables"
 
 #. module: project_working_time_task_portal
-#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__subtask_billable_effective_hours
-msgid "Subtask Billable Effective Hours"
-msgstr "Heures passées facturables Sous-tâches"
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.portal_tasks_list_inherit
+msgid "Billable Hours"
+msgstr "Heures facturables"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__billable_progress
+msgid "Billable Progress"
+msgstr ""
+
+#. module: project_working_time_task_portal
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Billable Remaining Days"
+msgstr "Jours restants facturables"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__billable_remaining_hours
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Billable Remaining Hours"
+msgstr "Heures restantes facturables"
 
 #. module: project_working_time_task_portal
 #: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
@@ -76,3 +77,42 @@ msgstr "Jours passés non facturables"
 #: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
 msgid "Non Billable Effective Hours"
 msgstr "Heures passées non facturables"
+
+#. module: project_working_time_task_portal
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.portal_my_task_remaining_hours
+msgid "Remaining Hours:"
+msgstr "Heures restantes:"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_account_analytic_line__smart_search
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__smart_search
+msgid "Smart Search"
+msgstr ""
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__subtask_billable_effective_hours
+msgid "Subtask Billable Effective Hours"
+msgstr "Heures passées facturables Sous-tâches"
+
+#. module: project_working_time_task_portal
+#: model:ir.model,name:project_working_time_task_portal.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: project_working_time_task_portal
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Total Billable Effective Days"
+msgstr "Total des jours facturables"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,field_description:project_working_time_task_portal.field_project_task__total_billable_effective_hours
+#: model_terms:ir.ui.view,arch_db:project_working_time_task_portal.project_working_time_view_task_form
+msgid "Total Billable Effective Hours"
+msgstr "Total des heures facturables"
+
+#. module: project_working_time_task_portal
+#: model:ir.model.fields,help:project_working_time_task_portal.field_project_task__billable_remaining_hours
+msgid ""
+"Total Billable remaining time (without exclude_from_sale_order timesheet "
+"lines), can be re-estimated periodically by the assignee of the task."
+msgstr ""

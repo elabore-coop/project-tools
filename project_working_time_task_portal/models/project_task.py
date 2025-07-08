@@ -1,4 +1,4 @@
-from odoo import models, fields, api, _
+from odoo import api, fields, models
 from odoo.tools.float_utils import float_compare
 
 
@@ -38,6 +38,13 @@ class Task(models.Model):
         store=True,
         compute_sudo=True,
         recursive=True,
+    )
+
+    total_billable_effective_hours = fields.Float(
+        compute="_compute_total_billable_effective_hours",
+        string="Total Billable Effective Hours",
+        store=True,
+        compute_sudo=True,
     )
 
     @api.depends("timesheet_ids.unit_amount")
@@ -120,3 +127,10 @@ class Task(models.Model):
                     )
             else:
                 task.billable_progress = 0.0
+
+    @api.depends("billable_effective_hours", "subtask_billable_effective_hours")
+    def _compute_total_billable_effective_hours(self):
+        for task in self:
+            task.total_billable_effective_hours = (
+                task.billable_effective_hours + task.subtask_billable_effective_hours
+            )
