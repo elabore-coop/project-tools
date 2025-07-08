@@ -5,5 +5,5 @@ class RequestType(models.Model):
     _name = "request.type"
     _description = "Request Type"
 
-    name = fields.Char('name', required=True)
+    name = fields.Char("name", required=True)
     sequence = fields.Integer()

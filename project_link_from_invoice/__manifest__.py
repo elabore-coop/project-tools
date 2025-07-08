@@ -65,12 +65,7 @@ This module is maintained by Elabore.
 
 """,
     # any module necessary for this one to work correctly
-    "depends": [
-        "base",
-        "project",
-        "account",
-        "sale"
-    ],
+    "depends": ["base", "project", "account", "sale"],
     "qweb": [
         # "static/src/xml/*.xml",
     ],

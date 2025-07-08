@@ -11,9 +11,9 @@ class PortalTaskCreation(CustomerPortal):
         "name",
         "service_id",
         "request_type_id",
-        "small_description", #not in v14
-        "access", #not in v14
-        "bug_report", #not in v14
+        "small_description",  # not in v14
+        "access",  # not in v14
+        "bug_report",  # not in v14
         "priority",
     ]
 
@@ -26,24 +26,16 @@ class PortalTaskCreation(CustomerPortal):
             "partner": partner,
         }
         return self._get_page_view_values(
-            partner,
-            access_token,
-            values,
-            "my_task_creation_history",
-            False,
-            **kwargs
+            partner, access_token, values, "my_task_creation_history", False, **kwargs
         )
 
     def _get_task_priorities(self):
         priorities = []
-        for id, name in request.env['project.task']._fields['priority'].selection:
-            value = {
-                "id": id,
-                "name": name
-            }
+        for id, name in request.env["project.task"]._fields["priority"].selection:
+            value = {"id": id, "name": name}
             priorities.append(value)
         return priorities
-    
+
     @http.route(
         ["/task/form"],
         type="http",
@@ -51,7 +43,9 @@ class PortalTaskCreation(CustomerPortal):
         website=True,
     )
     def portal_task_creation(self, access_token=None, redirect=None, **kw):
-        values = self._taskform_get_page_view_values(request.env.user.partner_id, access_token, **kw)
+        values = self._taskform_get_page_view_values(
+            request.env.user.partner_id, access_token, **kw
+        )
         request_types = request.env["request.type"].sudo().search([])
         task_services = request.env["task.service"].sudo().search([])
         priorities = self._get_task_priorities()
@@ -66,7 +60,9 @@ class PortalTaskCreation(CustomerPortal):
                 "error_message": error_message,
             }
         )
-        return request.render("project_task_portal_form.portal_task_creation_form", values)
+        return request.render(
+            "project_task_portal_form.portal_task_creation_form", values
+        )
 
     def _compute_form_data(self, data):
         values = {}
@@ -78,17 +74,23 @@ class PortalTaskCreation(CustomerPortal):
                 values[field] = data.pop(field)
         description = ""
         if values.get("small_description", False):
-            description = description + "<b>DESCRIPTION:</b><br/>" + values["small_description"] 
-            del values['small_description']
+            description = (
+                description + "<b>DESCRIPTION:</b><br/>" + values["small_description"]
+            )
+            del values["small_description"]
         if values.get("access", False):
-            description = description + "<br/><br/><b>ACCESS:</b><br/>" + values["access"] 
-            del values['access']
+            description = (
+                description + "<br/><br/><b>ACCESS:</b><br/>" + values["access"]
+            )
+            del values["access"]
         if values.get("bug_report", False):
-            description = description + "<br/><br/><b>BUG REPORT:</b><br/>" + values["bug_report"]
-            del values['bug_report']        
+            description = (
+                description + "<br/><br/><b>BUG REPORT:</b><br/>" + values["bug_report"]
+            )
+            del values["bug_report"]
 
         values["description"] = description
-        values["attachments"] = request.httprequest.files.getlist("attachment")        
+        values["attachments"] = request.httprequest.files.getlist("attachment")
 
         return values
 
@@ -96,7 +98,7 @@ class PortalTaskCreation(CustomerPortal):
         ["/task/create"],
         type="http",
         auth="public",
-        methods=['POST'],
+        methods=["POST"],
         website=True,
     )
     def create_task(self, **kwargs):
@@ -107,21 +109,21 @@ class PortalTaskCreation(CustomerPortal):
         values["partner_id"] = user.partner_id.id
         values["user_ids"] = [(6, 0, [user.id])]
 
-
-
         files = values.get("attachments", False)
-        del values['attachments']      
+        del values["attachments"]
 
         # Create task
-        task_id = request.env["project.task"].sudo().create(values) #use sudo to avoid access error on resource calendar when user_id is set
+        task_id = (
+            request.env["project.task"].sudo().create(values)
+        )  # use sudo to avoid access error on resource calendar when user_id is set
 
         # Add attachments
         for file in files:
             attachment_value = {
-                    'name': file.filename,
-                    'datas': base64.encodestring(file.read()),                    
-                    'res_model': "project.task",
-                    'res_id': task_id,
-                }
-            request.env['ir.attachment'].sudo().create(attachment_value)
+                "name": file.filename,
+                "datas": base64.encodestring(file.read()),
+                "res_model": "project.task",
+                "res_id": task_id,
+            }
+            request.env["ir.attachment"].sudo().create(attachment_value)
         return request.render("project_task_portal_form.portal_task_created", {})
