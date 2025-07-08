@@ -19,6 +19,13 @@
                 </span>
                 <field name="non_billable_effective_hours" widget="timesheet_uom" class="mt-2" attrs="{'invisible' : [('planned_hours', '=', 0.0)]}" nolabel="1"/>
             </xpath>
+	    <xpath expr="//field[@name='total_hours_spent']" position="after">
+	      <span>
+                    <label class="font-weight-bold" for="total_billable_effective_hours" string="Total Billable Effective Hours" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', True)]}"/>
+                    <label class="font-weight-bold" for="total_billable_effective_hours" string="Total Billable Effective Days" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', False)]}"/>
+                </span>
+                <field name="total_billable_effective_hours" widget="timesheet_uom" class="oe_subtotal_footer_separator" attrs="{'invisible' : [('planned_hours', '=', 0.0)]}" nolabel="1"/>
+	    </xpath>
             <xpath expr="//field[@name='remaining_hours']" position="after">
                 <span>
                     <label class="font-weight-bold" for="billable_remaining_hours" string="Billable Remaining Hours" attrs="{'invisible': ['|', ('planned_hours', '=', 0.0), ('encode_uom_in_days', '=', True)]}"/>

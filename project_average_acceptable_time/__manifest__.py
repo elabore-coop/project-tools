@@ -65,11 +65,7 @@ This module is maintained by Elabore.
 
 """,
     # any module necessary for this one to work correctly
-    "depends": [
-        "base",
-        "project",
-        "project_user_default_project"
-    ],
+    "depends": ["base", "project", "project_user_default_project"],
     "qweb": [
         # "static/src/xml/*.xml",
     ],
@@ -77,10 +73,7 @@ This module is maintained by Elabore.
         "python": [],
     },
     # always loaded
-    "data": [
-        "views/project_project.xml",
-        "views/portal_home_template.xml"
-    ],
+    "data": ["views/project_project.xml", "views/portal_home_template.xml"],
     # only loaded in demonstration mode
     "demo": [],
     "js": [],

@@ -11,13 +11,9 @@
     "category": "Tools",
     "summary": "In task kanban view, display remaining billable hours instead of remaining hours",
     "description": "",
-    "depends": [
-        "project",
-        "hr_timesheet",
-        "project_working_time_task_portal"
-    ],
+    "depends": ["project", "hr_timesheet", "project_working_time_task_portal"],
     "data": [
-        "views/project_task_views.xml",        
+        "views/project_task_views.xml",
     ],
     "installable": True,
     "application": False,
