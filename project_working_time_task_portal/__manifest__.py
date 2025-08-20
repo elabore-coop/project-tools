@@ -25,7 +25,8 @@
     "data": [
         "views/hr_timesheet_portal.xml",
         "views/hr_timesheet_view_task_form2.xml",
-        "views/portal_tasks_list.xml"
+        "views/portal_tasks_list.xml",
+        "views/project_views.xml"
     ],
     "assets": {
         "web.assets_frontend": [

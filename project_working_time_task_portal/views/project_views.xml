@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="project_working_time_view_project_kanban" model="ir.ui.view">
+        <field name="name">project.working.time.view.project.kanban</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="hr_timesheet.view_project_kanban_inherited" />
+        <field name="priority" eval="999" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_project_kanban_boxes')]/following-sibling::div[1]" position="replace">
+                <t t-set="badgeColor" t-value="'border-success'"/>
+                <t t-set="badgeColor" t-value="'border-danger'" t-if="record.billable_remaining_hours.raw_value &lt; 0"/>
+                <div t-if="record.allow_timesheets.raw_value and record.allocated_hours.raw_value &gt; 0"
+                     t-attf-class="oe_kanban_align badge border {{ badgeColor }}" title="Billable remaining hours" groups="hr_timesheet.group_hr_timesheet_user">
+                    <field name="billable_remaining_hours" widget="timesheet_uom"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
