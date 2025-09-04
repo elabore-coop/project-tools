@@ -17,7 +17,8 @@
         "project_working_time_task_portal"
     ],
     "data": [
-        "views/project_task_views.xml",        
+        "views/project_task_views.xml",
+        "views/project_views.xml"
     ],
     "installable": True,
     "application": False,
